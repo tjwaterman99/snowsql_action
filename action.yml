@@ -1,10 +1,25 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'snowsql'
+description: 'Run snowsql commands'
+author: 'Tom Waterman'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  account:
+    description: Your snowflake account id, eg zxr98023
+    required: true
+  region:
+    description: The region of your account, eg us-west-2
+    required: true
+  username:
+    description: The user to run the command as
+    required: true
+  database:
+    description: The database to use
+    required: true
+  schema:
+    description: The schema to use
+    required: true
+  role:
+    description: The role to use
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
